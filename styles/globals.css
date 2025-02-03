@@ -1,0 +1,145 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #333;
+    --background-color: #f8f9fa;
+    --text-color: #222;
+    --border-radius: 8px;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* General Container Styling */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #ffeb3b;
+}
+
+/* Skills & Experience */
+.skills-experience {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* Project Section */
+.project a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+.project a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+/* Contact Form */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: auto;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+button {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+button:hover {
+    background-color: #357ABD;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
