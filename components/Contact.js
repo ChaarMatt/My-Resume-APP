@@ -13,7 +13,7 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.name || !form.email || !form.message) {
@@ -24,17 +24,30 @@ const Contact = () => {
     setError("");
     setSubmitted(true);
 
-    setTimeout(() => {
-      setSubmitted(false);
-      setForm({ name: "", email: "", message: "" });
-    }, 3000);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setError("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setError("Something went wrong. Try again.");
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-r from-blue-700 via-indigo-500 to-purple-500 text-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
 
-        {/* 🔥 Updated Title to Match Hero Section */}
+        {/* 🔥 Section Title */}
         <h2 className="text-4xl font-extrabold text-center mb-6 text-white dark:text-blue-400 drop-shadow-lg">
           Get in Touch
         </h2>
