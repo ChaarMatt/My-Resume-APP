@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     service: "gmail",
     auth: {
       user: "chaarMatthew16@gmail.com", // Replace with your email
-      pass: "djaw spcs bkks zakt" // Replace with an App Password (Not your Gmail password)
+      pass: "Password_here" // Replace with an App Password (Not your Gmail password)
     }
   });
 
